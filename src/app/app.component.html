@@ -1,6 +1,19 @@
 <nav>
-    <h1>It works!</h1>
-    <!-- LAB #11 and 17 -->
-    <!-- LAB #6 -->
+  <!-- LAB #11 and 17 -->
+  <button (click)="open()" [disabled]="!supported.open">Open</button>
+  <button (click)="save()" [disabled]="!supported.save">Save</button>
+  <button (click)="copy()" [disabled]="!supported.copy">Copy</button>
+  <button (click)="paste()" [disabled]="!supported.paste">Paste</button>
+  <button (click)="share()" [disabled]="!supported.share">Share</button>
+  <!-- LAB #6 -->
+  <input type="color" #color (change)="onColorChange(color)" />
 </nav>
 <!-- LAB #1 and 4 -->
+<canvas
+  #canvas
+  width="600"
+  height="480"
+  (pointerdown)="onPointerDown($event)"
+  (pointermove)="onPointerMove($event)"
+  (pointerup)="onPointerUp()"
+></canvas>
